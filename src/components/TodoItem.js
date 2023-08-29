@@ -9,7 +9,12 @@ const TodoItem = (props) => {
     };
 
     const deleteItem = () => {
-        dispatch(deleteTodoItem(props.index));
+        const isConfirmed = window.confirm(
+            "Are you sure you want to delete this item?"
+        );
+        if (isConfirmed) {
+            dispatch(deleteTodoItem(props.index));
+        }
     };
 
     return (
