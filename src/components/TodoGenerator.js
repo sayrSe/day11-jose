@@ -4,27 +4,29 @@ import { addTodoItem } from "./todoListSlice";
 
 const TodoGenerator = () => {
     const [itemInput, setItemInput] = useState("");
+    const dispatch = useDispatch();
 
     const onItemChange = (event) => {
         setItemInput(event.target.value);
     };
 
-    const dispatch = useDispatch();
-    const id = new Date();
-
     const addItem = () => {
-        if (!itemInput.match(/[a-z]/i) || itemInput.trim() == null) {
-            alert("Invalid input! please add text");
-        } else {
+        if (isValidInput()) {
             dispatch(
                 addTodoItem({
-                    id,
+                    id: Date.now(),
                     text: itemInput,
                     done: false,
                 })
             );
             setItemInput("");
+        } else {
+            alert("Oops! It seems like your input is invalid. Please enter some text to continue.");
         }
+    };
+
+    const isValidInput = () => {
+        return itemInput.length > 3 && itemInput.trim() != null;
     };
 
     return (
