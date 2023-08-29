@@ -10,7 +10,8 @@ const todoListSlice = createSlice({
             state.todoList.push(action.payload);
         },
         doneTodoItem: (state, action) => {
-            state.todoList[action.payload].done = !state.todoList[action.payload].done;
+            const todoItem = state.todoList[action.payload];
+            todoItem.done = !todoItem.done;
         },
         deleteTodoItem: (state, action) => {
             state.todoList.splice(action.payload, 1);
