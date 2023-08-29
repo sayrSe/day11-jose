@@ -1,0 +1,79 @@
+
+.add-button {
+    margin-left: 5px;
+    padding: 10px 10px;
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    color: #007bff;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.item-input {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.item-input:hover {
+    border-color: #007bff;
+}
+
+.item-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px gainsboro solid;
+    border-radius: 5px;
+    width: 500px;
+    margin: 5px;
+    padding: 10px 15px;
+    text-align: start;
+    font-size: 15px;
+}
+
+.todo-item:hover {
+    box-shadow: 7px 5px 16px -1px rgba(150,150,150,0.75);
+}
+
+.todo-item span {
+    flex: 1;
+    max-width: 90%;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.delete-button:hover {
+    background-color: #d63031;
+}
+
+.done {
+    color: #cececf;
+    text-decoration: line-through;
+}

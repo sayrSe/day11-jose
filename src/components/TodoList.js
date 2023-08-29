@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import TodoGenerator from "./TodoGenerator";
 import TodoGroup from "./TodoGroup";
+import "./todoList.css";
 
 const TodoList = () => {
     const todoItems = useSelector((state) => state.todoList.todoList);
