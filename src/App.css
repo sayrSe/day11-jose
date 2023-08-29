@@ -44,6 +44,9 @@
 }
 
 .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border: 1px gainsboro solid;
     border-radius: 5px;
     width: 500px;
@@ -53,21 +56,27 @@
     font-size: 13px;
 }
 
-.done-button {
-    float: right;
+.todo-item span {
+    flex: 1;
+    max-width: 90%;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+.delete-button {
     background-color: #ff6347;
     color: #fff;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 4px;
-    margin-top: -5px;
 }
 
-.done-button:hover {
+.delete-button:hover {
     background-color: #d63031;
 }
 
 .done {
+    color: green;
     text-decoration: line-through;
 }

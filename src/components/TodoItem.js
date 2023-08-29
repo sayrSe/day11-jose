@@ -21,7 +21,7 @@ const TodoItem = (props) => {
                 >
                     {props.todoItem.text}
                 </span>
-                <button className="done-button" onClick={deleteItem}>
+                <button className="delete-button" onClick={deleteItem}>
                     x
                 </button>
             </div>
