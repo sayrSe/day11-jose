@@ -37,6 +37,7 @@ const TodoGenerator = () => {
                 onChange={onItemChange}
                 className="item-input"
                 placeholder="What are you going to do today?"
+                id="itemInput"
             />
             <button onClick={addItem} className="add-button">
                 Add
