@@ -29,7 +29,7 @@
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 13px;
+    font-size: 15px;
     margin-top: 20px;
 }
 
@@ -53,7 +53,11 @@
     margin: 5px;
     padding: 10px 15px;
     text-align: start;
-    font-size: 13px;
+    font-size: 15px;
+}
+
+.todo-item:hover {
+    box-shadow: 7px 5px 16px -1px rgba(150,150,150,0.75);
 }
 
 .todo-item span {
