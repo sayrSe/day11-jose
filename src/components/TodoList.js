@@ -7,11 +7,11 @@ const TodoList = () => {
     const todoItems = useSelector((state) => state.todoList.todoList);
 
     return (
-        <div className="App">
+        <>
             <h1>Todo List</h1>
             <TodoGroup todoItems={todoItems} />
             <TodoGenerator />
-        </div>
+        </>
     );
 };
 
