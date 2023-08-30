@@ -1,16 +1,10 @@
-import { useDispatch } from "react-redux";
-import * as todoApi from "../../src/api/todoApi";
-import { resetAllTodoItems } from "./todoListSlice";
+import { useTodos } from "../hooks/useTodos";
 
 const TodoItem = (props) => {
-    const dispatch = useDispatch();
+    const { toggleTodo, deleteTodo } = useTodos();
 
     const toggleItem = async () => {
-        await todoApi.updateTodoTask(props.todoItem.id, {
-            done: !props.todoItem.done,
-        });
-        const response = await todoApi.getAllTodoItems();
-        dispatch(resetAllTodoItems(response.data));
+        toggleTodo(props.todoItem.id, props.todoItem);
     };
 
     const deleteItem = async () => {
@@ -18,11 +12,7 @@ const TodoItem = (props) => {
             "Are you sure you want to delete this item?"
         );
         if (isConfirmed) {
-            await todoApi.deleteTodoTask(props.todoItem.id, {
-                done: !props.todoItem.done,
-            });
-            const response = await todoApi.getAllTodoItems();
-            dispatch(resetAllTodoItems(response.data));
+            deleteTodo(props.todoItem.id);
         }
     };
 
@@ -30,20 +20,14 @@ const TodoItem = (props) => {
         <>
             <div className="todo-item">
                 <span
-                    className={
-                        props.isDone ? "" : props.todoItem.done ? "done" : ""
-                    }
+                    className={props.todoItem.done ? "done" : ""}
                     onClick={toggleItem}
                 >
                     {props.todoItem.text}
                 </span>
-                {props.isDone ? (
-                    ""
-                ) : (
-                    <button className="delete-button" onClick={deleteItem}>
-                        x
-                    </button>
-                )}
+                <button className="delete-button" onClick={deleteItem}>
+                    x
+                </button>
             </div>
         </>
     );
