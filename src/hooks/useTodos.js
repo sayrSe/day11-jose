@@ -11,17 +11,17 @@ export const useTodos = () => {
     }
 
     const addTodo = async (todoItem) => {
-        await todoApi.addTodoTask(todoItem);
+        await todoApi.addTodoItem(todoItem);
         loadTodos();
     };
 
     const toggleTodo = async (id, todoItem) => {
-        await todoApi.updateTodoTask(id, {done: !todoItem.done});
+        await todoApi.toggleTodoItem(id, {done: !todoItem.done});
         loadTodos();
     };
 
     const deleteTodo = async (id) => {
-        await todoApi.deleteTodoTask(id);
+        await todoApi.deleteTodoItem(id);
         loadTodos();
     };
 

@@ -13,7 +13,7 @@ const TodoGenerator = () => {
 
     const addItem = async () => {
         if (isValidInput()) {
-            await todoApi.addTodoTask({
+            await todoApi.addTodoItem({
                 id: Date.now().toString(),
                 text: itemInput,
                 done: false,
