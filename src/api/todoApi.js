@@ -4,7 +4,7 @@ export const getAllTodoItems = () => {
     return api.get("/todos");
 };
 
-export const toggleTodoItem = (id, todoItem) => {
+export const updateTodoItem = (id, todoItem) => {
     return api.put(`/todos/${id}`, todoItem);
 };
 

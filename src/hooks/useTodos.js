@@ -16,7 +16,7 @@ export const useTodos = () => {
     };
 
     const toggleTodo = async (id, todoItem) => {
-        await todoApi.toggleTodoItem(id, {done: !todoItem.done});
+        await todoApi.updateTodoItem(id, {done: !todoItem.done});
         loadTodos();
     };
 
