@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { deleteTodoItem, doneTodoItem } from "./todoListSlice";
+import { deleteTodoItem, toggleTodoItem } from "./todoListSlice";
 
 const TodoItem = (props) => {
     const dispatch = useDispatch();
 
     const toggleDone = () => {
-        dispatch(doneTodoItem(props.index));
+        dispatch(toggleTodoItem(props.todoItem.id));
     };
 
     const deleteItem = () => {
