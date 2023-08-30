@@ -1,3 +1,5 @@
+import { DeleteFilled, EditFilled } from "@ant-design/icons";
+import { Button, Space } from "antd";
 import { useTodos } from "../hooks/useTodos";
 
 const TodoItem = (props) => {
@@ -25,9 +27,18 @@ const TodoItem = (props) => {
                 >
                     {props.todoItem.text}
                 </span>
-                <button className="delete-button" onClick={deleteItem}>
-                    x
-                </button>
+                <Space.Compact>
+                    <Button
+                        type="primary"
+                        ghost
+                        onClick={props.openModal(props.todoItem)}
+                    >
+                        <EditFilled />
+                    </Button>
+                    <Button danger onClick={deleteItem}>
+                        <DeleteFilled />
+                    </Button>
+                </Space.Compact>
             </div>
         </>
     );
