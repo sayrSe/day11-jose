@@ -13,7 +13,7 @@ const TodoItem = (props) => {
             "Are you sure you want to delete this item?"
         );
         if (isConfirmed) {
-            dispatch(deleteTodoItem(props.index));
+            dispatch(deleteTodoItem(props.todoItem.id));
         }
     };
 

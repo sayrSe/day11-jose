@@ -14,7 +14,8 @@ const todoListSlice = createSlice({
             todoItem.done = !todoItem.done;
         },
         deleteTodoItem: (state, action) => {
-            state.todoList.splice(action.payload, 1);
+            const newTodoList = state.todoList.filter(todoItem => todoItem.id !== action.payload);
+            state.todoList = newTodoList;
         },
     },
 });
