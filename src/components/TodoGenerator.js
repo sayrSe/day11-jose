@@ -26,7 +26,7 @@ const TodoGenerator = () => {
     };
 
     const isValidInput = () => {
-        return itemInput.length >= 3 && itemInput.trim() != null;
+        return itemInput.trim() != null;
     };
 
     return (
