@@ -1,15 +1,16 @@
 import { useDispatch } from "react-redux";
-import { deleteTodoItem, toggleTodoItem } from "./todoListSlice";
+import * as todoApi from "../../src/api/todoApi";
+import { deleteTodoItem, resetAllTodoItems } from "./todoListSlice";
 
 const TodoItem = (props) => {
     const dispatch = useDispatch();
 
-    const toggleItem = () => {
-        if (props.isDone) {
-            console.log("Go to details page");
-        } else {
-            dispatch(toggleTodoItem(props.todoItem.id));
-        }
+    const toggleItem = async () => {
+        await todoApi.updateTodoTask(props.todoItem.id, {
+            done: !props.todoItem.done,
+        });
+        const response = await todoApi.getAllTodoItems();
+        dispatch(resetAllTodoItems(response.data));
     };
 
     const deleteItem = () => {

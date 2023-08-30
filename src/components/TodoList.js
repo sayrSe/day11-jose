@@ -9,9 +9,11 @@ import { resetAllTodoItems } from "./todoListSlice";
 const TodoList = (props) => {
     const dispatch = useDispatch();
     useEffect(() => {
-        todoApi
-            .getAllTodoItems()
-            .then((response) => dispatch(resetAllTodoItems(response.data)));
+        async function fetchData() {
+            const response = await todoApi.getAllTodoItems();
+            dispatch(resetAllTodoItems(response.data));
+        }
+        fetchData();
     }, []);
     const todoItems = useSelector((state) => state.todoList.todoList);
     return (
