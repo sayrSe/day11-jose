@@ -25,6 +25,10 @@ nav > ul > li {
     list-style: none;
 }
 
+nav a:hover {
+    color: rgb(196, 196, 196);
+}
+
 nav > ul {
     padding: 0px;
 }
