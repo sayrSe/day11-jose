@@ -7,7 +7,7 @@ const DoneList = () => {
 
     return (
         <>
-            <h1>"Done Items"</h1>
+            <h1>Done Items</h1>
             <DoneGroup todoItems={todoItems} />
         </>
     );
