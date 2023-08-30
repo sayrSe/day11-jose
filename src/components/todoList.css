@@ -42,10 +42,10 @@
     justify-content: space-between;
     border: 1px gainsboro solid;
     border-radius: 5px;
-    width: 500px;
-    margin: 5px;
+    margin: 5px 0px;
     padding: 10px 15px;
     text-align: start;
+    background-color: white;
     font-size: 15px;
 }
 
@@ -55,22 +55,18 @@
 
 .todo-item span {
     flex: 1;
-    max-width: 90%;
     word-wrap: break-word;
     cursor: pointer;
 }
 
 .delete-button {
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
+    color: #ff6347;
     cursor: pointer;
-    border-radius: 4px;
+    font-size: 20px;
 }
 
 .delete-button:hover {
-    background-color: #d63031;
+    color: #d63031;
 }
 
 .done {

@@ -1,9 +1,10 @@
 .App {
     text-align: center;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    /* display: flex;
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif; */
 }
 
 .nav-bar {
@@ -20,7 +21,7 @@
 }
 
 nav > ul > li {
-    padding: 20px;
+    padding: 0px 20px;
     list-style: none;
 }
 
@@ -30,5 +31,10 @@ nav > ul {
 
 nav a {
     text-decoration: none; /* Remove underlines from links */
+    font-weight: 700;
     color: #fff; /* Text color for the links */
+}
+
+nav a:hover {
+    color: rgb(30, 163, 240) rgb(84, 159, 245); /* Text color for the links */
 }
