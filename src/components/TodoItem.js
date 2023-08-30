@@ -5,7 +5,11 @@ const TodoItem = (props) => {
     const dispatch = useDispatch();
 
     const toggleItem = () => {
-        dispatch(toggleTodoItem(props.todoItem.id));
+        if (props.isDone) {
+            console.log("Go to details page");
+        } else {
+            dispatch(toggleTodoItem(props.todoItem.id));
+        }
     };
 
     const deleteItem = () => {
@@ -21,14 +25,20 @@ const TodoItem = (props) => {
         <>
             <div className="todo-item">
                 <span
-                    className={props.todoItem.done ? "done" : ""}
+                    className={
+                        props.isDone ? "" : props.todoItem.done ? "done" : ""
+                    }
                     onClick={toggleItem}
                 >
                     {props.todoItem.text}
                 </span>
-                <button className="delete-button" onClick={deleteItem}>
-                    x
-                </button>
+                {props.isDone ? (
+                    ""
+                ) : (
+                    <button className="delete-button" onClick={deleteItem}>
+                        x
+                    </button>
+                )}
             </div>
         </>
     );
