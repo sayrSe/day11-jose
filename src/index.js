@@ -5,9 +5,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import { store } from "./app/store";
 import DoneList from "./components/DoneList";
-import TodoList from "./components/TodoList";
 import TodoItemDetail from "./components/TodoItemDetail";
+import TodoList from "./components/TodoList";
 import "./index.css";
+import ErrorPage from "./pages/ErrorPage";
 import HelpPage from "./pages/HelpPage";
 import reportWebVitals from "./reportWebVitals";
 
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
+        errorElement: <ErrorPage />,
         children: [
             { index: true, element: <TodoList /> },
             {
@@ -25,7 +27,8 @@ const router = createBrowserRouter([
             {
                 path: "/done",
                 element: <DoneList />,
-            },            {
+            },
+            {
                 path: "/done/:id",
                 element: <TodoItemDetail />,
             },
