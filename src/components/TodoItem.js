@@ -4,7 +4,7 @@ import { deleteTodoItem, toggleTodoItem } from "./todoListSlice";
 const TodoItem = (props) => {
     const dispatch = useDispatch();
 
-    const toggleDone = () => {
+    const toggleItem = () => {
         dispatch(toggleTodoItem(props.todoItem.id));
     };
 
@@ -22,7 +22,7 @@ const TodoItem = (props) => {
             <div className="todo-item">
                 <span
                     className={props.todoItem.done ? "done" : ""}
-                    onClick={toggleDone}
+                    onClick={toggleItem}
                 >
                     {props.todoItem.text}
                 </span>
