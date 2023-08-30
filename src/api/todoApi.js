@@ -7,3 +7,7 @@ export const getAllTodoItems = () => {
 export const updateTodoTask = (id, todoItem) => {
 	return api.put(`/todos/${id}`, todoItem);
 }
+
+export const addTodoTask = (todoItem) => {
+	return api.post(`/todos`, todoItem);
+}
