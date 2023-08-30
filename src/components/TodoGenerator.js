@@ -14,7 +14,7 @@ const TodoGenerator = () => {
         if (isValidInput()) {
             dispatch(
                 addTodoItem({
-                    id: Date.now(),
+                    id: Date.now().toString(),
                     text: itemInput,
                     done: false,
                 })

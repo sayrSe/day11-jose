@@ -7,7 +7,6 @@ const DoneGroup = (props) => {
             <DoneItem
                 todoItem={todoItem}
                 key={todoItem.id}
-                isDone={props.isDone}
             />
         );
     });
