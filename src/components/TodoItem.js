@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import * as todoApi from "../../src/api/todoApi";
-import { deleteTodoItem, resetAllTodoItems } from "./todoListSlice";
+import { resetAllTodoItems } from "./todoListSlice";
 
 const TodoItem = (props) => {
     const dispatch = useDispatch();
@@ -13,12 +13,16 @@ const TodoItem = (props) => {
         dispatch(resetAllTodoItems(response.data));
     };
 
-    const deleteItem = () => {
+    const deleteItem = async () => {
         const isConfirmed = window.confirm(
             "Are you sure you want to delete this item?"
         );
         if (isConfirmed) {
-            dispatch(deleteTodoItem(props.todoItem.id));
+            await todoApi.deleteTodoTask(props.todoItem.id, {
+                done: !props.todoItem.done,
+            });
+            const response = await todoApi.getAllTodoItems();
+            dispatch(resetAllTodoItems(response.data));
         }
     };
 
